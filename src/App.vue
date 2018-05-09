@@ -1,25 +1,20 @@
 <template>
   <div id="app">
-   <message> Hello There </message>
-   <input-form> aaaaa </input-form>
-   <shared-state> </shared-state>
+   <!-- <message> Hello There </message> -->
+   <!-- <input-form> aaaaa </input-form> -->
+   <ul>
+        <li><router-link to="/">/</router-link></li>
+        <li><router-link to="/foo">/foo</router-link></li>
+        <li><router-link to="/input" exact>/input</router-link></li>
+        <router-link tag="li" to="/bar" :event="['mousedown', 'touchstart']">
+          <a>/bar</a>
+        </router-link>
+      </ul>
+      <router-view class="view"></router-view>
   </div>
 </template>
 
 <script>
-
-import Message from './components/Message.vue'
-import InputForm from './components/InputForm.vue'
-import SharedState from './components/SharedState.vue'
-export default {
-  name: 'app',
-  components: { Message, InputForm, SharedState },
-  data () {
-    return {
-    }
-  }
-}
-
 </script>
 
 <style>
