@@ -10,7 +10,10 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/vue-fontawesome": "0.0.22",
     "axios": "^0.18.0",
+    "bulma": "^0.7.1",
     "vue": "^2.5.11",
     "vue-router": "^3.0.1"
   },
