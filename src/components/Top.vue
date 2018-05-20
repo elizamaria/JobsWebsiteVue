@@ -30,19 +30,19 @@
                 Contact
               </a>
               <span class="navbar-item">
-                   <div class="field is-grouped">
-                        <a>
-                            <span class="icon">
-                                <i class="fab fa-twitter" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                         <a>
-                            <span class="icon">
-                                <i class="fab fa-facebook" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                </div>
+                  <a>
+                      <span class="icon">
+                          <i class="fab fa-twitter" aria-hidden="true"></i>
+                      </span>
+                  </a>
               </span>
+               <span class="navbar-item">
+                   <a>
+                      <span class="icon">
+                          <i class="fab fa-facebook" aria-hidden="true"></i>
+                      </span>
+                  </a>
+               </span>
             </div>
           </div>
       </nav>
@@ -52,39 +52,12 @@
         <img id="cmpImage" src="../assets/company.jpg"/>
         <div id="contentText">
             <p class="title">
-                Title
+                EVOZON Systems
             </p>
             <p class="subtitle">
-                Subtitle
+                Customized IT Solutions from Romania
             </p>
         </div>
-    </div>
-  
-    <div class="hero-foot">
-      <nav class="tabs is-boxed is-fullwidth">
-        <div class="container">
-          <ul>
-            <li class="is-active">
-              <a>Overview</a>
-            </li>
-            <li>
-              <a>Modifiers</a>
-            </li>
-            <li>
-              <a>Grid</a>
-            </li>
-            <li>
-              <a>Elements</a>
-            </li>
-            <li>
-              <a>Components</a>
-            </li>
-            <li>
-              <a>Layout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
     </div>
   </section>
 
@@ -100,9 +73,16 @@ export default {
 
 
 <style>
+.title {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+}
 
 #logo {
-    width: 130px;
+    width: 120px;
     height: 60px;
 }
 
