@@ -1,72 +1,23 @@
 <template>
 <section class="is-info is-large">
-    <div class="hero-head">
-      <nav class="navbar">
-          <div class="navbar-brand">
-            <a class="navbar-item">
-              <img id="logo" src="https://www.evozon.com/wp-content/uploads/2018/02/evozon-2018-logo-e1517932632956.png" alt="Logo">
-            </a>
-            <span class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroB">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroB" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item is-active">
-                Home
-              </a>
-              <a class="navbar-item">
-                Departments
-              </a>
-              <a class="navbar-item">
-                Job Opportunities
-              </a>
-              <a class="navbar-item">
-                Internships
-              </a>
-              <a class="navbar-item">
-                Contact
-              </a>
-              <span class="navbar-item">
-                  <a>
-                      <span class="icon">
-                          <i class="fab fa-twitter" aria-hidden="true"></i>
-                      </span>
-                  </a>
-              </span>
-               <span class="navbar-item">
-                   <a>
-                      <span class="icon">
-                          <i class="fab fa-facebook" aria-hidden="true"></i>
-                      </span>
-                  </a>
-               </span>
-            </div>
-          </div>
-      </nav>
-    </div>
-  
-    <div>
-        <img id="cmpImage" src="../assets/company.jpg"/>
+    <div class="cont">
+        <img id="cmpImage" :src="imgsource"/>
         <div id="contentText">
             <p class="title">
-                EVOZON Systems
+                {{title}}  
             </p>
             <p class="subtitle">
-                Customized IT Solutions from Romania
+                {{subtitle }} 
             </p>
         </div>
     </div>
   </section>
-
 </template>
 
 
 <script>
 export default {
-   
+   props: ['title', 'subtitle', 'imgsource'],
 }
 
 </script>
@@ -79,6 +30,10 @@ export default {
 
 .subtitle {
   text-align: center;
+}
+
+.cont {
+
 }
 
 #logo {
@@ -103,7 +58,7 @@ export default {
     position: relative;
     color: white;
     opacity: 0.5;
-}
+} 
 
 #contentText {
    position: absolute;
