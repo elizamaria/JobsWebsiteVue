@@ -3,21 +3,21 @@
     <nav class="navbar">
           <div class="navbar-brand">
             <a class="navbar-item">
-              <img id="logo" src="https://www.evozon.com/wp-content/uploads/2018/02/evozon-2018-logo-e1517932632956.png" alt="Logo">
+              <img id="logo" src="http://www.ctmsolutions.com/mailing/CTM_Solutions/newsletter_2007/TOP15_SONY/Sony-logo-Blue.gif" alt="Logo">
             </a>
-            <span class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroB">
+            <a @click="makeBurger" class="navbar-burger burger" v-bind:class="{ 'is-active': activator }" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroB">
               <span></span>
               <span></span>
               <span></span>
-            </span>
+            </a>
           </div>
-          <div id="navbarMenuHeroB" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item is-active">
-                <router-link to="/" exact>Home</router-link>
+          <div id="navbarMenuHeroB" class="navbar-menu" v-bind:class="{ 'is-active': activator }">
+            <ul class="navbar-end">
+              <a class="navbar-item">
+                <router-link tag="li" to="/" exact> Home</router-link>
               </a>
               <a class="navbar-item">
-                <router-link to="/departments" exact>Departments</router-link>
+                <router-link tag="li" to="/departments"> Departments</router-link>
               </a>
               <a class="navbar-item">
                 Job Opportunities
@@ -35,14 +35,14 @@
                       </span>
                   </a>
               </span>
-               <span class="navbar-item">
-                   <a>
-                      <span class="icon">
-                          <i class="fab fa-facebook" aria-hidden="true"></i>
-                      </span>
-                  </a>
-               </span>
-            </div>
+              <span class="navbar-item">
+                  <a>
+                    <span class="icon">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                    </span>
+                </a>
+              </span>
+            </ul>
           </div>
       </nav>
 </template>
@@ -50,7 +50,19 @@
 
 <script>
 export default {
-   
+  data () {
+    return {
+      msg: '',
+      activator: false
+    }
+  },
+
+  methods: {
+    makeBurger () {
+      this.activator = !this.activator
+      return this.activator
+    }
+  }
 }
 
 </script>
@@ -61,4 +73,9 @@ export default {
     background: 'red';
     padding: 10px;
 }
+
+.is-active {
+  color: #32A0EA
+}
+
 </style>

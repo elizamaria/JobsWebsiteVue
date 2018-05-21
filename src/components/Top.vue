@@ -14,7 +14,6 @@
   </section>
 </template>
 
-
 <script>
 export default {
    props: ['title', 'subtitle', 'imgsource'],
@@ -26,19 +25,21 @@ export default {
 <style>
 .title {
   text-align: center;
+  font-size: 40px;
 }
 
 .subtitle {
   text-align: center;
+  font-size: 25px;
 }
 
 .cont {
-
+    position: relative;
 }
 
 #logo {
     width: 120px;
-    height: 60px;
+    height: auto;
 }
 
 .hero {
@@ -55,9 +56,10 @@ export default {
 }
 
 #cmpImage {
-    position: relative;
     color: white;
-    opacity: 0.5;
+    opacity: 0.4;
+    max-height: 100%;
+    max-width: 100%;
 } 
 
 #contentText {
@@ -66,5 +68,27 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+}
+
 
 </style>

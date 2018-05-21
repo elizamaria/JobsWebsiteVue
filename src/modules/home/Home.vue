@@ -1,11 +1,11 @@
 <template>
     <div>
-    <Top  title="EVOZON Systems" subtitle="Customized IT Solutions from Romania" imgsource="http://www2.vollmer-group.com/uploads/media/VOLLMER_Company_01.jpg"></Top>
+    <Top  title="SONY" subtitle="Great products made with passion" imgsource="http://www2.vollmer-group.com/uploads/media/VOLLMER_Company_01.jpg"></Top>
     <section>
       <div class="why_us columns">
         <div class="column is-half">
           <h2><b> Why us? </b></h2>
-         <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+         <p class="text_desc"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
@@ -20,7 +20,7 @@
     <section>
       <div class="hireParagraph">
         <h2 id="hireHeader"><b> HOW WE HIRE? </b></h2>
-         <p class="centered_text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+         <p class="centered_text text_desc"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -32,11 +32,10 @@
     </section>
     <section>
       <div class="cardsContainer">
-        <CardButton> </CardButton>
-        <CardButton> </CardButton>
+        <CardButton title="FIND AN INTERNSHIP"> </CardButton>
+        <CardButton title="FIND A JOB" > </CardButton>
       </div>
     </section>
-   <Footer> </Footer>
 </div>
 </template>
 
@@ -97,6 +96,29 @@ h2 {
   justify-content: center;
 }
 
+@media only screen and (max-width: 600px) {
+  #title {
+    font-size: 15px;
+  }
 
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text_desc {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  #title {
+    font-size: 18px;
+  }
+
+  .text_desc {
+    font-size: 16px;
+  }
+}
 
 </style>

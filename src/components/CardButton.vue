@@ -1,14 +1,13 @@
 <template>
-    <div class="cardButton">
-        <h2 id="title"> FIND AN INTERNSHIP </h2>
-        <a class="button go-button">GO</a>
-    </div>
+    <a class="cardButton">
+        <h2 id="title"> {{title}} </h2>
+    </a>
 </template>
 
 
 <script>
 export default {
-   
+   props: ['title']
 }
 
 </script>
@@ -21,19 +20,19 @@ export default {
   margin: 20px;
   width: 25%;
   display: flex;
+  padding: 30px;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background-color: #B9E4F4;
+  background-color: rgb(220, 241, 250);
 }
 
 #title {
     font-size: 20px;
-    margin-bottom: 20px;
+    color: #363636;
 }
 
 .cardButton:hover {
-  background-color: #00b7da;
+  background-color: rgb(80, 169, 253);
 }
 
 .go-button {
@@ -42,4 +41,24 @@ export default {
   width: 50%;
   border-width: 0px;
 }
+
+@media only screen and (max-width: 600px) {
+  #title {
+    font-size: 15px;
+  }
+
+  .cardButton {
+    height: 200px;
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  #title {
+    font-size: 17px;
+  }
+
+}
+
 </style>

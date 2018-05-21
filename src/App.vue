@@ -2,15 +2,17 @@
   <div id="app">
       <Navbar> </Navbar>
       <router-view class="view"></router-view> 
+      <Footer> </Footer>      
   </div>
 </template>
 
 <script>
 import Home from './modules/home/Home.vue'
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 
 export default {
-  components: { Home, Navbar }
+  components: { Home, Navbar, Footer }
 }
 </script>
 

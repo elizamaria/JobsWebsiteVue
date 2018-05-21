@@ -1,6 +1,6 @@
 <template>
  <footer id="footer">
-      <h3> © 2005-2018 Evozon Systems. All rights reserved. </h3>  
+      <h3> © 2005-2018 SONY. All rights reserved. </h3>  
       <div>
             <a>
                 <span class="icon">
