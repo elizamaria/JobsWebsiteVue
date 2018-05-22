@@ -1,20 +1,22 @@
 <template>
   <div class="cont">
     <Top :title="title" :subtitle="subtitle" :imgsource="imgsource"> 
-        <input class="input is-rounded" type="text" placeholder="Search job">
+        <input class="input is-rounded" type="text" v-model="searchVal" @keydown="searchJobs" placeholder="Search job">
     </Top>
     <section id="content-cont"> 
         <h3 class="subtitle filter_subtitle"> {{filtersTitle}} </h3> 
         <div id="filters_row">
             <span class="select_label"> Select department </span>
             <div class="select is-rounded">
-                <select>
+               <select @change="filter" v-model="selectedDepart">
+                    <option>  </option>
                     <option v-for="dep in departments" :key="dep">{{dep}}</option>
                 </select>
             </div>
             <span class="select_label"> Select location </span>
             <div class="select is-rounded">
-                <select>
+                <select @change="filter" v-model="selectedLocation">
+                    <option>  </option>
                     <option v-for="loc in locations" :key="loc">{{loc}}</option>
                 </select>
             </div>
@@ -22,7 +24,7 @@
     </section>
     <section id="rows_container"> 
         <ul>
-            <li v-for="job in jobs" :key="job.title"> 
+            <li v-for="job in viewList" :key="job.id"> 
                 <div class="row_container columns"> 
                     <span class="column"> <b> {{job.title}} </b> </span>
                     <span class="column"> <b> {{job.department}} </b> </span>
@@ -50,38 +52,87 @@ export default {
             locations: ['London', 'Paris', 'Bucharest', 'Cluj'],
             jobs: [
                 {
+                    id: 0,
                     title: 'Project Manager',
                     department: 'Automation',
                     location: 'London'
                 },
                 {
+                    id: 1,
                     title: 'Senior Developer',
                     department: 'PHP',
                     location: 'Cluj'
                 },
                 {
+                    id: 2,
                     title: 'Junior Developer',
                     department: 'Machine Learning',
                     location: 'Bucharest'
                 },
                 {
+                    id: 3,
                     title: 'Team Lead',
                     department: 'Automation',
                     location: 'Paris'
                 },
                 {
+                    id: 4,
                     title: 'Software Developer',
                     department: 'PHP',
                     location: 'London'
                 },
                 {
+                    id: 5,
                     title: 'Project Manager',
                     department: 'C++',
                     location: 'Bucharest'
                 },
-            ]
+            ],
+            viewList: [],
+            searchVal: "",
+            selectedLocation: "",
+            selectedDepart: ""
         }
-    }
+    },
+
+    created() {
+            this.viewList = this.jobs
+    },
+
+    methods: {
+            searchJobs() {
+               this.viewList = []
+               this.jobs.forEach(job => {
+                   if (job.title.toLowerCase().indexOf(this.searchVal) > -1) {
+                       this.viewList.push(job)
+                   }
+               })
+            },
+
+            filter () {
+                this.viewList = []
+                this.searchVal = ""
+                if (this.selectedLocation === "" && this.selectedDepart === "" ) {
+                    return this.viewList = this.jobs
+                }
+
+                 this.jobs.forEach(job => {
+                    if (this.selectedLocation === "" && job.department === this.selectedDepart ) {
+                        return this.viewList.push(job)
+                    }
+
+                    if (this.selectedDepart === "" && job.location === this.selectedLocation) {
+                        return this.viewList.push(job)
+                    }
+
+                    if (job.location === this.selectedLocation && job.department === this.selectedDepart) {
+                        this.viewList.push(job)
+                    }
+                })                
+            },
+
+        },
+
 }
 
 </script>
