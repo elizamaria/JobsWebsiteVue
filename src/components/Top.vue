@@ -9,6 +9,7 @@
             <p class="subtitle">
                 {{subtitle }} 
             </p>
+            <slot> </slot>
         </div>
     </div>
   </section>

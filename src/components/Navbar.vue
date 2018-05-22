@@ -20,7 +20,7 @@
                 <router-link tag="li" to="/departments"> Departments</router-link>
               </a>
               <a class="navbar-item">
-                Job Opportunities
+                <router-link tag="li" to="/jobs"> Job Opportunities</router-link>
               </a>
               <a class="navbar-item">
                 Internships
