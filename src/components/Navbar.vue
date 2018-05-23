@@ -23,7 +23,7 @@
                 <router-link tag="li" to="/jobs"> Job Opportunities</router-link>
               </a>
               <a class="navbar-item">
-                Internships
+                <router-link tag="li" to="/programs"> Internships </router-link>
               </a>
               <a class="navbar-item">
                 Contact

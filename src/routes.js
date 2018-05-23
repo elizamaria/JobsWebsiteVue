@@ -3,6 +3,7 @@ import InputForm from './components/InputForm.vue'
 import Departments from './modules/departments/Departments.vue'
 import Home from './modules/home/Home.vue'
 import Jobs from './modules/jobs/Jobs.vue'
+import Internships from './modules/internships/Internships.vue'
 
 let routes = [
     {
@@ -16,6 +17,10 @@ let routes = [
     {
         path: '/jobs',
         component: Jobs
+    },
+    {
+        path: '/programs',
+        component: Internships
     }
 ]
 
