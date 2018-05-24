@@ -1,6 +1,6 @@
 <template>
 <section class="is-info is-large">
-    <div class="cont">
+    <div class="top_cont">
         <img id="cmpImage" :src="imgsource"/>
         <div id="contentText">
             <p class="title">
@@ -34,8 +34,12 @@ export default {
   font-size: 25px;
 }
 
-.cont {
+.top_cont {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 #logo {
@@ -59,8 +63,8 @@ export default {
 #cmpImage {
     color: white;
     opacity: 0.4;
-    max-height: 100%;
-    max-width: 100%;
+    height: auto;
+    width: 100%;
 } 
 
 #contentText {

@@ -26,7 +26,7 @@
                 <router-link tag="li" to="/programs"> Internships </router-link>
               </a>
               <a class="navbar-item">
-                Contact
+                <router-link tag="li" to="/contact"> Contact </router-link>
               </a>
               <span class="navbar-item">
                   <a>

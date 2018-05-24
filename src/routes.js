@@ -4,6 +4,7 @@ import Departments from './modules/departments/Departments.vue'
 import Home from './modules/home/Home.vue'
 import Jobs from './modules/jobs/Jobs.vue'
 import Internships from './modules/internships/Internships.vue'
+import Contact from './modules/contact/Contact.vue'
 
 let routes = [
     {
@@ -21,6 +22,10 @@ let routes = [
     {
         path: '/programs',
         component: Internships
+    },
+    {
+        path: '/contact',
+        component: Contact
     }
 ]
 

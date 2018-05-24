@@ -19,12 +19,15 @@
     <section id="rows_container"> 
         <ul>
             <li v-for="internship in viewList" :key="internship.id"> 
-                <div class="row_container columns"> 
-                    <span class="column"> <b> {{internship.title}} </b> </span>
-                    <span class="column"> {{internship.duration}} </span>
-                    <span class="column"> <b> {{internship.location}} </b> </span>
-                    <span class="column" v-if="internship.deadline"> Apply until: {{internship.deadline}} </span>
-                    <a class="read_more_btn column"> Read more </a>
+                <div class="row_cont">
+                    <div class="main_details columns " :class="{ 'expand' : internship.expand }"> 
+                        <span class="column"> <b> {{internship.title}} </b> </span>
+                        <span class="column"> {{internship.duration}} </span>
+                        <span class="column"> <b> {{internship.location}} </b> </span>
+                        <span class="column" v-if="internship.deadline"> Apply until: {{internship.deadline}} </span>
+                        <span class="read_more column"> <a @click="readMore(internship)"> Read more </a> </span>
+                    </div>
+                    <p v-if="internship.expand" class="elem_desc"> <b>Description: </b> {{internship.description}} </p>
                 </div>
             </li>
         </ul>
@@ -51,6 +54,9 @@ export default {
                     duration: '3 months',
                     deadline: '31/06/2018',
                     location: "London",
+                    description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
                 {
                     id: 2,
@@ -58,20 +64,29 @@ export default {
                     duration: '2 months',
                     deadline: '08/07/2018',
                     location: "Bucharest",
+                    description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
                 {
                     id: 3,
-                    title: "Automation Internship",
-                    duration: '3 months',
+                    title: "QA Internship",
+                    duration: '2 months',
                     deadline: '07/09/2018',
                     location: "London",
+                    description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
                 {
                     id: 4,
-                    title: "Automation Internship",
+                    title: "BI Internship",
                     duration: '3 months',
                     deadline: '8/06/2018',
                     location: "London",
+                    description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
             ],
             trainingPrograms: [
@@ -80,18 +95,27 @@ export default {
                     title: "Product Engineering",
                     duration: '4 days',
                     location: "London",
+                     description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
                 {
                     id: 2,
                     title: "A manager responsabilities",
                     duration: '7 days',
                     location: "Bucharest",
+                     description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
                 {
                     id: 3,
                     title: "QA Automation Training",
                     duration: '1 week',
                     location: "Paris",
+                     description: "It is a long established fact that a reader will be distracted by the readable content of a " + 
+                    "page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution " + 
+                    "of letters, as opposed to using 'Content here, content here', making it look like readable English."
                 },
             ],
             viewList: []
@@ -99,7 +123,10 @@ export default {
     },
 
     created() {
-        this.viewList = this.internships
+        this.viewList = this.internships.map(obj =>{
+            obj.expand = false
+            return obj
+        })
     },
 
     methods: {
@@ -110,6 +137,17 @@ export default {
                 this.viewList = this.trainingPrograms
             }
             this.activeTab = !this.activeTab
+        },
+
+        readMore(internship) {
+            console.log(internship)
+            this.viewList = this.viewList.map(elem => {
+                if(elem.id === internship.id) {
+                    console.log('set true')
+                    elem.expand = !elem.expand
+                }
+                return elem
+            });
         }
     }
 }
@@ -123,29 +161,40 @@ export default {
     padding-bottom: 40px;
 }
 
+.elem_desc {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.expand {
+    height: 100px;
+}
+
 #ul_cont {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.read_more_btn {
+.read_more {
     width: 100px;
-    align-self: flex-end;
-    text-align: center;
 }
 
-.row_container {
-    flex: 1;
+.main_details {
+    display: flex;
+    flex-direction: row;
+}
+
+.row_cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-right: 30px;
     margin-left: 30px;
-    display: flex;
-    border: 1px solid black;
     margin-top: 20px;
-    flex-direction: row;
-    justify-content: center;
+    padding: 15px;
+    border: 1px solid black;
     border-radius: 10px;
-    padding: 7px;
 }
 
 .row_container:hover {
