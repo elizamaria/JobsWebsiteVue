@@ -22,8 +22,8 @@ export default {
 
    data () {
         return {
-           title: 'ENTER ONE OF OUR DEPARTMENTS',
-           subtitle: 'Find the department that best suits your needs and join us',
+           title: 'DEPARTMENTS',
+           subtitle: 'Find the department that best suits your needs',
            departments1: [
             {
                 title: 'C++',

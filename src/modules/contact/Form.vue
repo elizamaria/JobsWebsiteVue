@@ -5,18 +5,12 @@
             <label class="label">Name</label>
             <div class="control has-icons-left has-icons-right">
                 <input class="input" type="text" placeholder="Text input">
-                <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-                </span>
             </div>
         </div>
         <div class="field">
             <label class="label">Email</label>
             <div class="control has-icons-left">
                 <input class="input" type="email" placeholder="Email input">
-                <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                </span>
             </div>
         </div>
         <div class="field">

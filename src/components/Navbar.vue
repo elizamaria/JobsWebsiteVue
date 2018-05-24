@@ -2,9 +2,11 @@
 <template>
     <nav class="navbar">
           <div class="navbar-brand">
-            <a class="navbar-item">
-              <img id="logo" src="http://www.ctmsolutions.com/mailing/CTM_Solutions/newsletter_2007/TOP15_SONY/Sony-logo-Blue.gif" alt="Logo">
-            </a>
+              <a class="navbar-item">
+                <router-link to="/" exact>
+                  <img id="logo" src="http://www.ctmsolutions.com/mailing/CTM_Solutions/newsletter_2007/TOP15_SONY/Sony-logo-Blue.gif" alt="Logo">
+                </router-link>
+              </a>
             <a @click="makeBurger" class="navbar-burger burger" v-bind:class="{ 'is-active': activator }" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroB">
               <span></span>
               <span></span>

@@ -40,6 +40,7 @@ export default {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    font-family: 'Roboto';
 }
 
 #logo {
@@ -74,14 +75,13 @@ export default {
     transform: translate(-50%, -50%);
 }
 
-
 @media only screen and (max-width: 600px) {
     .title {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .subtitle {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 
@@ -94,6 +94,5 @@ export default {
         font-size: 20px;
     }
 }
-
 
 </style>

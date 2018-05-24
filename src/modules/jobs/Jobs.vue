@@ -29,7 +29,6 @@
                     <span class="column"> <b> {{job.title}} </b> </span>
                     <span class="column"> <b> {{job.department}} </b> </span>
                     <span class="column"> <b> {{job.location}} </b> </span>
-                    <a class="read_more_btn column"> Read more </a>
                 </div>
             </li>
         </ul>
@@ -44,12 +43,12 @@ export default {
     components: { Top },
     data () {
         return {
-            title: 'JOB OPPORTUNITIES',
+            title: 'JOBS',
             subtitle: 'Search for the job you like',
             filtersTitle: '... or filter the results',
             imgsource: ' https://www.eslstarter.com/admin/resources/program-pics/dsc2722retouch2-copy-w1440h600.jpg',
             departments: ['Machine Learning', 'PHP', 'C++', 'Automation'],
-            locations: ['London', 'Paris', 'Bucharest', 'Cluj'],
+            locations: ['London', 'Paris', 'Bucharest', 'Cluj', 'Ramnicu Valcea'],
             jobs: [
                 {
                     id: 0,
@@ -196,6 +195,33 @@ export default {
 .select_label {
     margin-right: 10px;
     align-self: center;
+}
+
+@media only screen and (max-width: 700px) {
+.input {
+    height: 20px;
+    font-size: 11px;
+}
+#filters_row {
+    flex-direction: column;
+}
+
+.select_label {
+    font-size: 15px;
+}
+
+.row_container {
+    font-size: 11px;
+}
+
+#filters_row {
+    padding: 10px;
+}
+
+.filter_subtitle {
+    padding-bottom: 0px;
+}
+
 }
 
 </style>

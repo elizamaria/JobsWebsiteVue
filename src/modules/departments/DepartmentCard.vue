@@ -59,6 +59,16 @@ export default {
     width: 90%;
     display: flex;
     height: 200px;
-    }
+}
+
+.dep_desc {
+    /* font-size: 20px; */
+    font-size: 12px;
+}
+
+.dep_title {
+    font-size: 17px;
+}
+    
 }
 </style>

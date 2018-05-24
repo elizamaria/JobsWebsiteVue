@@ -7,12 +7,10 @@
                 <Form> </Form>
             </section>
             <section class="main_section column"> 
-                <h3 class="subtitle"> How to find us? </h3>
+                <h3 class="title"> How to find us? </h3>
                 <p> Address: {{address}} </p>
                 <div>
                     <iframe
-                    width="500"
-                    height="350"
                     id="map"
                     frameborder="0"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.9448165133363!2d23.577623411187886!3d46.765984177470465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c1743f64e35%3A0x1aca3a419457ba22!2sEvozon+Systems!5e0!3m2!1sen!2sus!4v1447063759412" allowfullscreen>
@@ -65,10 +63,8 @@ export default {
 #map {
     border: 0;
     padding: 20px;
-}
-
-details_section {
-
+    width: 500px;
+    height: 350px;
 }
 
 .main_section {
@@ -118,6 +114,13 @@ details_section {
 #rows_container {
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 700px) {
+#map {
+    width: 320px;
+    height: 250px;
+}
 }
 
 </style>

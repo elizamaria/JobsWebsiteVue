@@ -22,11 +22,13 @@
                 <div class="row_cont">
                     <div class="main_details columns " :class="{ 'expand' : internship.expand }"> 
                         <span class="column"> <b> {{internship.title}} </b> </span>
-                        <span class="column"> {{internship.duration}} </span>
+                        <span class="column hide"> {{internship.duration}} </span>
                         <span class="column"> <b> {{internship.location}} </b> </span>
-                        <span class="column" v-if="internship.deadline"> Apply until: {{internship.deadline}} </span>
+                        <span class="column hide" v-if="internship.deadline"> Apply until: {{internship.deadline}} </span>
                         <span class="read_more column"> <a @click="readMore(internship)"> Read more </a> </span>
                     </div>
+                    <span v-if="internship.expand" class="show"> Duration: {{internship.duration}} </span>
+                    <span v-if="internship.deadline && internship.expand" class="show"> Apply until: {{internship.deadline}} </span>
                     <p v-if="internship.expand" class="elem_desc"> <b>Description: </b> {{internship.description}} </p>
                 </div>
             </li>
@@ -162,12 +164,12 @@ export default {
 }
 
 .elem_desc {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-right: 20px;
 }
 
 .expand {
-    height: 100px;
+    height: 50px;
 }
 
 #ul_cont {
@@ -211,6 +213,28 @@ export default {
 #rows_container {
     display: flex;
     flex-direction: column;
+}
+
+.show {
+    display: none
+}
+
+@media only screen and (max-width: 700px) {
+.cont {
+    font-size: 12px;
+}
+
+.hide {
+    display: none
+}
+
+.show {
+    display: block
+}
+
+.label {
+    font-size: 11px;
+}
 }
 
 </style>
